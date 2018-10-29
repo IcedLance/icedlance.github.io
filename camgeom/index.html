@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Картинки с разбором данных лидара:</h2>
+<p>Сначала просто посмотрим на данные:<br>
+(раскрашены согласно расстоянию до лидара, т.е. начала координат)
+</p>
+<video width="800" height="820" controls loop>
+  <source src="res/3D_data_full.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+<p>С отмеченными осями (<b><span style="color: #ff0000; font-weight: bold">X</span>,<span style="color: #00cc00">Y</span>,<span style="color: #0000ff">Z</span></b>):</p>
+<video width="800" height="820" controls loop>
+  <source src="res/anim3D_axis.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+<p>После всех поворотов (согласно матрице и вокруг <b><span style="color: #0000ff">Z</span></b> чтобы ось <b><span style="color: #ff0000; font-weight: bold">X</span></b> была горизонтальной):</p>
+<video width="800" height="820" controls loop>
+  <source src="res/anim3D_rotated_axis.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+<p>
+Cпроектируем все на камеру, точки раскрасим согласно оси <b><span style="color: #0000ff">Z</span></b> <br>(то что впереди - желтее, позади - синее в данной цветовой схеме).<br>
+Т.к. мы проецируем все точки, многие из них будут за границами изображения,<br> но для наглядности отметим все и посмотрим как лежат их проекции, постепенно меняя масштаб:
+</p>
+<video width="800" height="620" controls>
+  <source src="res/Projection_zoom_401.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<p>
+Вот тот самый "крест", который в нераскрашенном виде сбивал с толку. Тем более он был вертикальный.<br>
+</p>
+<p>
+Теперь обрежем лишнее, получив что-то вроде того, что мы увидели бы на камере:
+</p>
+<img src="res/snap_000.png" alt="Camera projection" width="900" height="300">
+
+<p>
+Как было видно выше, получилось так, что ось <b><span style="color: #0000ff">Z</span></b> упирается в стенку.<br>
+Это не то, что нам нужно, повертим камерой, поворачивая точки вокруг оси <b><span style="color: #00cc00">Y</span></b>.
+</p>
+<p>
+Гифка получилась тяжелая (11Мб в несколько сжатом виде), поэтому ее можно открыть <b><a href="https://icedlance.github.io/res/rotating_cam_proj.gif">ТУТ</a></b>, а ниже нарезка в приличном качестве:<br>
+<a href="https://icedlance.github.io/camgeom/gallery/">По здравом размышлении, перенес на отдельную страничку.</a>
+</p>
+<p><br><br><br><br><br><br><br></p>
+
+
+</body>
+</html>
